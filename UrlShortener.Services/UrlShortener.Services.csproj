@@ -52,11 +52,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbService.cs" />
+    <Compile Include="EntityService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UrlShortener.Core\UrlShortener.Core.csproj">
+      <Project>{FBF4CE72-A21D-474A-97F2-869A4657AA24}</Project>
+      <Name>UrlShortener.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UrlShortener.Data\UrlShortener.Data.csproj">
+      <Project>{336a134c-f9d1-49e8-b6c6-b4793d7351df}</Project>
+      <Name>UrlShortener.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -9,11 +9,11 @@ namespace UrlShortener.Core.Services
 {
     public class ServiceResult
     {
-        public bool Succeeded { get; private set; } //private to avoid changes
+        public bool Succeeded { get; private set; } 
         public int Id { get; }
         public IEntity Entity { get; private set; }
 
-        public IEnumerable<string> Errors = new List<string>();   //implements any type of collection
+        public IEnumerable<string> Errors = new List<string>();   
 
         public ServiceResult(bool succeeded)
         {
@@ -32,7 +32,7 @@ namespace UrlShortener.Core.Services
             return this;
         }
 
-        public ServiceResult Set(IEntity entity)  //object returns itself
+        public ServiceResult Set(IEntity entity)  
         {
             Entity = entity;
             return this;
