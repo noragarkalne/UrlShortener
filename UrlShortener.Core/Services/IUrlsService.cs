@@ -10,5 +10,6 @@ namespace UrlShortener.Core.Services
     public interface IUrlsService : IEntityService<LongUrl>
     {
         Task<ServiceResult> AddUrls(LongUrl url);
+        Task<LongUrl> GetUrl(int id);
     }
 }

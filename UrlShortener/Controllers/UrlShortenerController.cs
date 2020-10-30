@@ -35,6 +35,7 @@ namespace UrlShortener.Controllers
         {
         }
 
+        [HttpPut, Route("api/url")]
         // PUT: api/UrlShortener/5
         public async Task<IHttpActionResult> Add(LongUrl url)
         {
@@ -44,9 +45,11 @@ namespace UrlShortener.Controllers
             {
                 return Conflict();
             }
-
+            
             url.Id = task.Entity.Id;
-            return Created("", _mapper.Map<ShortUrlResponse>(url));
+
+            var url_s = await _urlService.GetUrl(url.Id);
+            return Created("", url_s.Short.UrlShort);
         }
 
         // DELETE: api/UrlShortener/5
