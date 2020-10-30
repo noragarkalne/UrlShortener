@@ -73,6 +73,14 @@ namespace UrlShortener.Services
 
             return new string(chars);
         }
+
+        public void ClearUrls()
+        {
+            _ctx.Urls.RemoveRange(_ctx.Urls);
+            _ctx.ShortUrls.RemoveRange(_ctx.ShortUrls);
+            _ctx.SaveChanges();
+        }
+
         //public async Task<IEnumerable<Flight>> GetFlights()
         //{
         //    return await Query().ToListAsync();

@@ -53,10 +53,13 @@ namespace UrlShortener.Controllers
         }
 
         // DELETE: api/UrlShortener/5
-            public void Delete(int id)
+        [HttpDelete, Route("api/clear")]
+        public IHttpActionResult Clear()
         {
+            _urlService.ClearUrls();
+            return Ok();
         }
 
-        
+
     }
 }

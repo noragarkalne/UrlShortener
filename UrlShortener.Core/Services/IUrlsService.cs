@@ -11,5 +11,6 @@ namespace UrlShortener.Core.Services
     {
         Task<ServiceResult> AddUrls(LongUrl url);
         Task<LongUrl> GetUrl(int id);
+        void ClearUrls();
     }
 }
