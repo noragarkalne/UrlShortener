@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UrlShortener.Core.Interfaces;
 
-namespace UrlShortener.Core.Models
+namespace UrlShortener.Services
 {
-    public class Entity : IEntity
+    class DbService
     {
-        public int Id { get; set; }
     }
 }

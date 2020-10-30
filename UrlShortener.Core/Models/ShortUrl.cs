@@ -1,6 +1,6 @@
 ﻿namespace UrlShortener.Core.Models
 {
-    public class ShortUrl
+    public class ShortUrl : Entity
     {
         public string UrlShort { get; set; }
     }

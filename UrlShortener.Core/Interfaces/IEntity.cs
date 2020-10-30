@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UrlShortener.Core.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
+        int Id { get; set; }
     }
 }
