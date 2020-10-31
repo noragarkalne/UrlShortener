@@ -10,6 +10,6 @@ namespace UrlShortener.Core.Models
     {
         public string Url { get; set; }
 
-        public ShortUrl Short { get; set; }
+        public virtual ShortUrl Short { get; set; }
     }
 }

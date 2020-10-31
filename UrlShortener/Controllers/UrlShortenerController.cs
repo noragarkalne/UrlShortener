@@ -48,7 +48,7 @@ namespace UrlShortener.Controllers
 
             if (existingUrl != null)
             {
-                return Ok(existingUrl.Short);
+                return Ok(existingUrl.Short.UrlShort);
             }
 
             var task = await _urlService.AddUrls(url);
