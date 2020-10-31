@@ -13,13 +13,13 @@ namespace UrlShortener.Core.Services
         public int Id { get; }
         public IEntity Entity { get; private set; }
 
-        public IEnumerable<string> Errors = new List<string>();   
+        public IEnumerable<string> Errors = new List<string>();
 
+       
         public ServiceResult(bool succeeded)
         {
             Succeeded = succeeded;
         }
-
 
         public ServiceResult(int id, bool succeeded)
         {

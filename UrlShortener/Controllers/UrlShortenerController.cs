@@ -39,13 +39,18 @@ namespace UrlShortener.Controllers
         // PUT: api/UrlShortener/5
         public async Task<IHttpActionResult> Add(LongUrl url)
         {
-            var task = await _urlService.AddUrls(url);
+            if (Validation.IsUrlValid(url.Url) == false)
+            {
+                return BadRequest();
+            }
 
+            var task = await _urlService.AddUrls(url);
+            
             if (task.Succeeded == false)
             {
-                return Conflict();
+                return Ok();
             }
-            
+
             url.Id = task.Entity.Id;
 
             var url_s = await _urlService.GetUrl(url.Id);
