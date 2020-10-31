@@ -44,12 +44,14 @@ namespace UrlShortener.Controllers
                 return BadRequest();
             }
 
-            var task = await _urlService.AddUrls(url);
-            
-            if (task.Succeeded == false)
+            var existingUrl = await _urlService.Get(url.Url);
+
+            if (existingUrl != null)
             {
-                return Ok();
+                return Ok(existingUrl.Short);
             }
+
+            var task = await _urlService.AddUrls(url);
 
             url.Id = task.Entity.Id;
 
