@@ -22,9 +22,6 @@ using UrlShortener.Data;
 using UrlShortener.Services;
 
 namespace UrlShortener.DependencyResolution {
-    using StructureMap.Configuration.DSL;
-    using StructureMap.Graph;
-	
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
 
@@ -43,7 +40,6 @@ namespace UrlShortener.DependencyResolution {
             var mapper = AutoMapperConfig.GetMapper();
             For<IMapper>().Use(mapper).Singleton();
         }
-
         #endregion
     }
 }

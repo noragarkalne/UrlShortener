@@ -21,8 +21,6 @@ using StructureMap.Graph.Scanning;
 namespace UrlShortener.DependencyResolution {
     using System;
     using System.Web.Mvc;
-
-    using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
     using StructureMap.Pipeline;
     using StructureMap.TypeRules;
@@ -39,6 +37,7 @@ namespace UrlShortener.DependencyResolution {
         }
 
         #endregion
+
         public void ScanTypes(TypeSet types, Registry registry)
         {
             foreach (var type in types.AllTypes())
@@ -46,6 +45,5 @@ namespace UrlShortener.DependencyResolution {
                 Process(type, registry);
             }
         }
-        
     }
 }

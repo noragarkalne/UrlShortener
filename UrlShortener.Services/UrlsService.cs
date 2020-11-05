@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using UrlShortener.Core.Models;
@@ -23,7 +22,6 @@ namespace UrlShortener.Services
 
             if (urls.Any(f => f.Url.Equals(url.Url)))
             {
-                //var x = urls.SingleOrDefault(a => a.Url == url.Url);
                 return new ServiceResult(false);
             }
 
@@ -56,6 +54,13 @@ namespace UrlShortener.Services
 
         }
 
+        public async Task<LongUrl> GetShortUrl(string shortUrl)
+        {
+            var urls = await _ctx.Urls.ToListAsync();
+            var u = urls.SingleOrDefault(f => f.Short.UrlShort == shortUrl);
+            return u;
+
+        }
 
         public static string ShortenUrl()
         {

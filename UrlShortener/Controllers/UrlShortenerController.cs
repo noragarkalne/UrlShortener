@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using AutoMapper;
 using UrlShortener.Core.Models;
 using UrlShortener.Core.Services;
@@ -12,31 +13,14 @@ using UrlShortener.Models;
 
 namespace UrlShortener.Controllers
 {
+    [EnableCors ("*", "*", "*")]
     public class UrlShortenerController : BasicApiController
     {
         public UrlShortenerController(IUrlsService urlService, IMapper mapper) : base(urlService, mapper)
         {
         }
 
-        // GET: api/UrlShortener
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/UrlShortener/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/UrlShortener
-        public void Post([FromBody]string value)
-        {
-        }
-
-        [HttpPut, Route("api/url")]
-        // PUT: api/UrlShortener/5
+        [HttpPut, Route("api/put/url")]
         public async Task<IHttpActionResult> Add(LongUrl url)
         {
             if (Validation.IsUrlValid(url.Url) == false)
@@ -51,6 +35,13 @@ namespace UrlShortener.Controllers
                 return Ok(existingUrl.Short.UrlShort);
             }
 
+            var existingShortUrl = await _urlService.GetShortUrl(url.Url);
+
+            if (existingShortUrl != null)
+            {
+                return Ok(existingShortUrl.Url);
+            }
+
             var task = await _urlService.AddUrls(url);
 
             url.Id = task.Entity.Id;
@@ -59,14 +50,12 @@ namespace UrlShortener.Controllers
             return Created("", url_s.Short.UrlShort);
         }
 
-        // DELETE: api/UrlShortener/5
+    
         [HttpDelete, Route("api/clear")]
         public IHttpActionResult Clear()
         {
             _urlService.ClearUrls();
             return Ok();
         }
-
-
     }
 }

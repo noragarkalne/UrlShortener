@@ -9,14 +9,5 @@ namespace UrlShortener.Models
     {
         public string ShortUrl { get; set; }
 
-        
-        public static ShortUrlResponse NewUrl(string url)
-        {
-            var result = new ShortUrlResponse()
-            {
-                ShortUrl = url
-            };
-            return result;
-        }
     }
 }

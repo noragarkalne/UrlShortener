@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UrlShortener.Core.Models;
 
@@ -12,6 +9,7 @@ namespace UrlShortener.Core.Services
         Task<ServiceResult> AddUrls(LongUrl url);
         Task<LongUrl> GetUrl(int id);
         Task<LongUrl> Get(string url);
+        Task<LongUrl> GetShortUrl(string shortUrl);
         void ClearUrls();
     }
 }
