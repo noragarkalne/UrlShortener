@@ -14,12 +14,12 @@ SQL Server Management Studio (https://docs.microsoft.com/en-us/sql/ssms/download
 * Web API contains web.config file where you should fix connection string to your local database. If it is necessary please make sure SQL server has login with username and password that contains connection string.
 
 -- aditional NuGet packages that I used for this project --
-> AutoMapper by Jimmy Bogard
-> StructureMap by Jeremy D. & Co
-> StructureMap.MVC5 by Web Advanced
-> StructureMap.web by Jeremy Miller
-> Entity Framework by Microsoft
-> Microsoft.ApsNet.Cors
-> Microsoft.ApsNet.WebApi.Cors
+> AutoMapper by Jimmy Bogard <br/>
+> StructureMap by Jeremy D. & Co <br/>
+> StructureMap.MVC5 by Web Advanced <br/>
+> StructureMap.web by Jeremy Miller <br/>
+> Entity Framework by Microsoft <br/>
+> Microsoft.ApsNet.Cors <br/>
+> Microsoft.ApsNet.WebApi.Cors <br/>
 
 🚧 If you would like to get frontend for Web API, please click here https://github.com/norak22/url-app !
