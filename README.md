@@ -13,4 +13,4 @@ SQL Server Management Studio (https://docs.microsoft.com/en-us/sql/ssms/download
 
 * Web API contains web.config file where you should fix connection string to your local database. If it is necessary please make sure SQL server has login with username and password that contains connection string.
 
-🚧 This project is a part! If you would like to get frontend, please click here https://github.com/norak22/url-app !
+🚧 If you would like to get frontend for Web API, please click here https://github.com/norak22/url-app !
