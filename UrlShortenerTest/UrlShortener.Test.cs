@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UrlShortener.Core.Services;
-using UrlShortener.Data;
 using UrlShortener.Services;
 
 namespace UrlShortenerTest
