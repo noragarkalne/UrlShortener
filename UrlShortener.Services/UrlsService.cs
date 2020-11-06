@@ -13,12 +13,11 @@ namespace UrlShortener.Services
     public class UrlsService : EntityService<LongUrl>, IUrlsService
     {
         public UrlsService(IUrlShortenerDbContext context) : base(context)
-    {
-    }
+        {
+        }
 
         public UrlsService()
         {
-            
         }
 
         public async Task<ServiceResult> AddUrls(LongUrl url)
@@ -56,7 +55,6 @@ namespace UrlShortener.Services
             var urls = await _ctx.Urls.ToListAsync();
             var u = urls.SingleOrDefault(f => f.Url == url);
             return u;
-
         }
 
         public async Task<LongUrl> GetShortUrl(string shortUrl)
@@ -64,7 +62,6 @@ namespace UrlShortener.Services
             var urls = await _ctx.Urls.ToListAsync();
             var u = urls.SingleOrDefault(f => f.Short.UrlShort == shortUrl);
             return u;
-
         }
 
         public string ShortenUrl()
@@ -100,7 +97,6 @@ namespace UrlShortener.Services
             _ctx.ShortUrls.RemoveRange(_ctx.ShortUrls);
             _ctx.SaveChanges();
         }
-
     }
 }
     
