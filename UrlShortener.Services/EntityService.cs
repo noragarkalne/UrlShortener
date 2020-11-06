@@ -15,6 +15,11 @@ namespace UrlShortener.Services
         {
         }
 
+        public EntityService()
+        {
+            
+        }
+
         public IQueryable<T> Query()
         {
             return Query<T>();

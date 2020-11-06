@@ -16,6 +16,11 @@ namespace UrlShortener.Services
     {
     }
 
+        public UrlsService()
+        {
+            
+        }
+
         public async Task<ServiceResult> AddUrls(LongUrl url)
         {
             var urls = await _ctx.Urls.ToListAsync();
@@ -62,7 +67,7 @@ namespace UrlShortener.Services
 
         }
 
-        public static string ShortenUrl()
+        public string ShortenUrl()
         {
             var firstPart = "http://www.short.url/";
             StringBuilder builder = new StringBuilder(firstPart);
@@ -73,12 +78,12 @@ namespace UrlShortener.Services
         }
 
 
-        static Random rand = new Random();
+        public Random rand = new Random();
 
         public const string Alphabet =
             "abcdefghijklmnopqrstuvwyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-        public static string GenerateString(int size)
+        public string GenerateString(int size)
         {
             char[] chars = new char[size];
             for (int i = 0; i < size; i++)

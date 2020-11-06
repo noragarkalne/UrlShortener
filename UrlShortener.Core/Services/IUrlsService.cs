@@ -10,6 +10,8 @@ namespace UrlShortener.Core.Services
         Task<LongUrl> GetUrl(int id);
         Task<LongUrl> Get(string url);
         Task<LongUrl> GetShortUrl(string shortUrl);
+        string GenerateString(int size);
+        string ShortenUrl();
         void ClearUrls();
     }
 }
